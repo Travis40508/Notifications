@@ -93,7 +93,7 @@ public class NotificationsUtil {
     //Adds action. You'll want to use a background service to handle removing the notification.
     private static NotificationCompat.Action ignoreNotificationAction(Context context) {
         Intent ignoreNotificationIntent = new Intent(context, Service.class);
-        ignoreNotificationIntent.setAction(Service.ACTION_NO_CLICKED);
+        ignoreNotificationIntent.setAction(ReminderTasks.ACTION_NO_CLICKED);
         PendingIntent pendingIntent = PendingIntent.getService(
                 context,
                 ACTION_IGNORE_NOTIFICATION_PENDING_INTENT_ID,
@@ -112,7 +112,7 @@ public class NotificationsUtil {
     //Action for logging confirmation success
     private static NotificationCompat.Action confirmNotificationAction(Context context) {
         Intent confirmNotificationIntent = new Intent(context, Service.class);
-        confirmNotificationIntent.setAction(Service.ACTION_CONFIRM_CLICKED);
+        confirmNotificationIntent.setAction(ReminderTasks.ACTION_CONFIRM_CLICKED);
         PendingIntent pendingIntent = PendingIntent.getService(
                 context,
                 ACTION_CONFIRM_NOTIFICATION_PENDING_INTENT_ID,

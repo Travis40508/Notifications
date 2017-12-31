@@ -16,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
 
         buttonNotification = findViewById(R.id.button_notification);
         listenForButtonClick();
+
+        JobReminderUtil.scheduleClickReminder(this);
     }
 
     //Calls the building of our notification, using the helper methods to determine which activity to open onClick and how to get the large icon.

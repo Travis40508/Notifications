@@ -1,6 +1,7 @@
 package com.example.rodneytressler.notificationspractice;
 
 import android.app.IntentService;
+import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.Nullable;
 
@@ -9,8 +10,6 @@ import android.support.annotation.Nullable;
  */
 
 public class Service extends IntentService {
-
-
 
 
     /**
@@ -25,16 +24,11 @@ public class Service extends IntentService {
         super("Service");
     }
 
-    public static final String ACTION_NO_CLICKED = "no-clicked";
-    public static final String ACTION_CONFIRM_CLICKED = "yes-clicked";
 
+    //This merely calls the proper method in our ReminderTasks class.
     @Override
     protected void onHandleIntent(@Nullable Intent intent) {
-        if(intent.getAction().equals(ACTION_NO_CLICKED)) {
-            NotificationsUtil.clearAllNotifications(getApplicationContext());
-        } else if(intent.getAction().equals(ACTION_CONFIRM_CLICKED)) {
-            NotificationsUtil.logSuccess();
-            NotificationsUtil.clearAllNotifications(getApplicationContext());
-        }
+        ReminderTasks.executeAction(intent.getAction(), getApplicationContext());
     }
+
 }
