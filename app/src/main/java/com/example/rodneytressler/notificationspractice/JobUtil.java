@@ -11,6 +11,7 @@ import android.os.AsyncTask;
  * Created by rodneytressler on 12/30/17.
  */
 
+//This class tells your scheduler what to do whenever it fires.
 public class JobUtil extends com.firebase.jobdispatcher.JobService {
 
     private AsyncTask mBackgroundTask;

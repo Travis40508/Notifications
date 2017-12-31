@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
         buttonNotification = findViewById(R.id.button_notification);
         listenForButtonClick();
 
+        //initiates job
         JobReminderUtil.scheduleClickReminder(this);
     }
 
